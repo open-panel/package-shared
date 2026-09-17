@@ -1,0 +1,59 @@
+{
+  "name": "@open-panel/shared",
+  "version": "0.1.0",
+  "description": "Domain types and zod schemas shared by every OpenPanel process: profiles, pages, buttons, actions, device info, themes, locales and events.",
+  "type": "module",
+  "license": "MIT",
+  "author": "OpenPanel contributors",
+  "homepage": "https://github.com/open-panel/openPanel/tree/main/packages/shared#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-panel/openPanel.git",
+    "directory": "packages/shared"
+  },
+  "bugs": {
+    "url": "https://github.com/open-panel/openPanel/issues"
+  },
+  "keywords": [
+    "openpanel",
+    "macropad",
+    "stream-deck",
+    "zod",
+    "types"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.2"
+  }
+}
